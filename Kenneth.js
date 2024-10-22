@@ -22,12 +22,12 @@ function returnInput(input) {
   return output;
 }
 
-function rockPaperScissors(input) {
-  const random = Math.floor(Math.random() * 100);
+function rockPaperScissors(input) { //algorithm
+  const random = Math.floor(Math.random() * 100); //create a random number
   let opponentChoice;
   let outcome;
 
-  for (let i = 0; i <= random; i++) {
+  for (let i = 0; i <= random; i++) { //random number decides which choice the opponent chooses
     if (i % 3 == 0) {
       opponentChoice = "rock";
     } else if (i % 2 == 0) {
@@ -37,7 +37,7 @@ function rockPaperScissors(input) {
     }
   }
 
-  if (opponentChoice == "rock") {
+  if (opponentChoice == "rock") { //if oponent chooses rock input 1, 2, or another to see whether you win
     if (input == 1) {
       outcome = "win";
     } else if (input == 2) {
@@ -45,7 +45,7 @@ function rockPaperScissors(input) {
     } else {
       outcome = "draw";
     }
-  } else if (opponentChoice == "paper") {
+  } else if (opponentChoice == "paper") { //if opponent chooses paper input 2, 0 or another to see whethe ryou win
     if (input == 2) {
       outcome = "win";
     } else if (input == 0) {
@@ -53,7 +53,7 @@ function rockPaperScissors(input) {
     } else {
       outcome = "draw";
     }
-  } else {
+  } else { //if oponent chooses anything else (scissors) input 0, 1, or another to see whether you win
     if (input == 0) {
       outcome = "win";
     } else if (input == 1) {
@@ -62,10 +62,10 @@ function rockPaperScissors(input) {
       outcome = "draw";
     }
   }
-  history.push(outcome);
+  history.push(outcome); //put outcome into history
 
   DOMSelectors.history.innerHTML = "";
-  DOMSelectors.content.insertAdjacentHTML(
+  DOMSelectors.content.insertAdjacentHTML( //order of printing
     "afterbegin",
     `<div class="card" id="${outcome}">
     <p>Your choice: ${returnInput(input).toUpperCase()}</p>
