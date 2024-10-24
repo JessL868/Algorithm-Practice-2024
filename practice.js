@@ -23,5 +23,17 @@ function parkingSpaces(n, yesterday, today) {
 console.log(checkSpaces(5, "CC..C", ".CC.."));
 //algorithm
 
-Input decimal
-for i = 0, i < n
+// input binary
+// for i = 0; i < binary; i--
+//  eachNumber = i*Math.pow(2, i - 1)
+//  wholeNumber = eachNumber += eachNumber
+// console.log(wholeNumber)
+
+function binToDec(x) {
+    for (i = 0; i < x; i--) {
+        eachNumber = i*Math.pow(2, i-1);
+        wholeNumber = eachNumber += eachNumber
+    };
+    console.log(wholeNumber);
+};
+binToDec(1101)
